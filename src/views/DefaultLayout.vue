@@ -1,5 +1,5 @@
 <template>
-  <v-layout class="rounded rounded-md">
+  <v-layout >
     <v-app-bar>
 
         <template v-slot:image>
@@ -32,8 +32,8 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-main class="d-flex align-center justify-center" style="min-height: 100vh;">
-       <div class="page-wrapper"><router-view /></div>
+    <v-main>
+      <div class="page-wrapper"><router-view /></div>
     </v-main>
   </v-layout>
 </template>
@@ -42,3 +42,10 @@
   export default {
   }
 </script>
+
+<style lang="sass" scoped>
+
+.page-wrapper
+  min-height: 100vh
+  padding-bottom: 20px
+</style>

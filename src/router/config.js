@@ -19,7 +19,7 @@ export const publicRoute = [
           requiresSuperUser: false,
         },
         component: () =>
-          import(/* webpackChunkName: "routes" */ '@/components/Dashboard.vue'),
+          import(/* webpackChunkName: "routes" */ '@/components/dashboard/Dashboard.vue'),
       }
     ]
     }
