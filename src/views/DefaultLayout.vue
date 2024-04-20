@@ -1,7 +1,10 @@
 <template>
   <v-layout>
-    <v-app-bar primary class="bg-purple-darken-4">
-      <v-app-bar-title>Fin Ai Learning</v-app-bar-title>
+    <v-app-bar
+      primary
+      class="bg-purple-darken-4"
+    >
+      <v-app-bar-title><span style="font-weight: bold;">Be Up</span> <span style="font-style: italic;">finance</span></v-app-bar-title>
       <v-spacer />
       <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
@@ -21,29 +24,34 @@
       </div>
     </v-main>
   </v-layout>
-  <v-bottom-navigation>
-  <v-btn value="recent">
-    <v-icon>mdi-text-box-multiple-outline</v-icon>
+  <v-bottom-navigation  class="bg-purple-darken-4">
+    <v-btn @click="navigate('/news')">
+      <v-icon>mdi-text-box-multiple-outline</v-icon>
 
-    <span>News</span>
-  </v-btn>
+      <span>News</span>
+    </v-btn>
 
-  <v-btn value="favorites">
-    <v-icon>mdi-play-circle-outline</v-icon>
+ 
+    <v-btn @click="navigate('/accademy')">
+      <v-icon>mdi-play-circle-outline</v-icon>
 
-    <span>Accademy</span>
-  </v-btn>
+      <span>Accademy</span>
+    </v-btn>
 
-  <v-btn value="nearby">
-    <v-icon>mdi-account</v-icon>
-
-    <span>Profile</span>
-  </v-btn>
-</v-bottom-navigation>
+    <v-btn value="nearby">
+      <v-icon>mdi-account</v-icon>
+      <span>Profile</span>
+    </v-btn>
+  </v-bottom-navigation>
 </template>
 
 <script>
   export default {
+    methods: {
+    navigate(path) {
+      this.$router.push(path);
+    }
+  }
   }
 </script>
 
