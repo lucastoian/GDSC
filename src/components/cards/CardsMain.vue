@@ -2,231 +2,64 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
   <v-container fluid>
-    <!-- Sezione Titolo + Ricerca Globale -->
-    <v-row justify="center">
-      <v-col
-        cols="12"
-        class="pb-2"
-      >
-        <v-card class="elevation-0">
-          <v-container fluid>
-            <v-row>
-              <v-toolbar
-                title="Pokemon Card List"
-              >
-                <v-divider
-                  class="mx-4"
-                  inset
-                  vertical
-                />
-                <v-text-field
-                  v-model="search"
-                  class="pt-0"
-                  append-inner-icon="mdi-magnify"
-                  label="Search"
-                  clearable
-                  hide-details
-                />
-              </v-toolbar>
-              <!-- Sezione filtri -->
-              <v-card
-                class="w-100 elevation-0"
-              >
-                <v-row class="mt-1">
-                  <v-col
-                    cols="12"
-                    md="3"
-                    lg="2"
-                  >
-                    <v-autocomplete
-                      label="Expansion"
-                      :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
-                    />
-                  </v-col>
-                  <v-col
-                    cols="12"
-                    md="3"
-                    lg="2"
-                  >
-                    <v-autocomplete
-                      label="Set Name"
-                      :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
-                    />
-                  </v-col>
-                  <v-col
-                    cols="12"
-                    md="3"
-                    lg="2"
-                  >
-                    <v-autocomplete
-                      label="Rarity"
-                      :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
-                    />
-                  </v-col>
-                  <v-col
-                    cols="12"
-                    md="3"
-                    lg="2"
-                  >
-                    <v-autocomplete
-                      label="Autocomplete"
-                      :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
-                    />
-                  </v-col>
-                </v-row>
-              </v-card>
-            </v-row>
-          </v-container>
+    <v-row>
+      <v-col cols="12" md="6">
+        <v-card @mouseup="selectText" variant="outlined" title="Stock Market Trends Analysis" subtitle="Prospects and Risks for Investments in 2024">
+          <template #text>
+            <p >
+              The <span class="highlight">Nasdaq</span> continues to show volatility as <span class="highlight">investors</span> assess the impact of new economic policies. The <span class="highlight">interest rate</span> has reached new highs, affecting <span class="highlight">emerging markets</span> and investment <span class="highlight">funds</span>. Considerations of <span class="highlight">risk</span> and expected return are essential for financial planning.
+            </p>
+          </template>
+        </v-card>
+      </v-col>
+
+      <v-col cols="12" md="6">
+        <v-card @mouseup="selectText" variant="outlined" title="Impact of Cryptocurrencies on Global Markets" subtitle="Dynamics and Volatility in 2024">
+          <template #text>
+            <p>
+              The rise of <span class="highlight">Bitcoin</span> has raised regulatory issues while <span class="highlight">institutional investors</span> explore <span class="highlight">diversification</span> options in the <span class="highlight">cryptocurrency</span> sector. The integration of <span class="highlight">blockchain</span> technology is transforming traditional investments.
+            </p>
+          </template>
+        </v-card>
+      </v-col>
+
+      <v-col cols="12" md="6">
+        <v-card @mouseup="selectText" variant="outlined" title="Real Estate Investments and Their Economic Impact" subtitle="Growth Prospects in the Real Estate Sector">
+          <template #text>
+            <p>
+              The <span class="highlight">real estate</span> market remains a cornerstone for <span class="highlight">investors</span> despite economic uncertainties. Purchasing <span class="highlight">properties</span> in growing areas offers a stable return and protection against <span class="highlight">inflation</span>.
+            </p>
+          </template>
+        </v-card>
+      </v-col>
+
+      <v-col cols="12" md="6">
+        <v-card @mouseup="selectText" variant="outlined" title="Dynamics of International Stock Markets" subtitle="Market Analysis and Investment Opportunities">
+          <template #text>
+            <p >
+              The stock exchanges of <span class="highlight">Shanghai</span> and <span class="highlight">New York</span> demonstrate how globalization influences <span class="highlight">equity investments</span>. <span class="highlight">Geopolitical risks</span> and <span class="highlight">trade policies</span> play a significant role in investment decisions.
+            </p>
+          </template>
         </v-card>
       </v-col>
     </v-row>
-
-    <!-- Sezione Data Table -->
-    <v-row justify="center">
-      <v-col
-        cols="12"
-        class="pt-2"
-      >
-        <v-card>
-          <v-data-table
-            :headers="headers"
-            :items="cardList"
-            :search="search"
-            no-data-text="Sorry, no matches for your query"
-          >
-            <template #item.name="{ item }">
-              <v-chip
-                class="ma-2"
-                label
-              >
-                <v-tooltip :text="item.type">
-                  <template #activator="{ props }">
-                    <v-avatar
-                      start
-                      size="16px"
-                      v-bind="props"
-                    >
-                      <v-img
-                        :alt="item.type"
-                    
-                        :src="'/src/assets/pokemon/icons/' + item.type + '.svg'"
-                      />
-                    </v-avatar>
-                  </template>
-                </v-tooltip>
-
-                
-                {{ item.name }}
-              </v-chip>
-            </template>
-            <template #item.image="{ item }">
-              <v-card
-                stacked
-                class="my-2"
-                elevation="0"
-                rounded
-              >
-                <v-img
-                  :src="item.image"
-                  max-height="70"
-                  contain
-                  @click="openDialog(item)"
-                />
-              </v-card>
-            </template>
-
-            <template #item.action="{ item }">
-              <v-btn
-                class="ma-2"
-                color="red"
-                :href="'pokemon/singles/' + item.name + '-' + item.setName"
-              >
-                View listings
-                <v-icon
-                  icon="mdi-cart"
-                  end
-                />
-              </v-btn>
-            </template>
-          </v-data-table>
-        </v-card>
-      </v-col>
-    </v-row>
-
-    <v-dialog
-      v-model="dialog"
-      transition="dialog-bottom-transition"
-      width="auto"
-    >
-      <v-card
-        width="260"
-        prepend-icon="mdi-cards-outline"
-        :title="selectedCard.name"
-      >
-        <v-img
-          :src="selectedCard.image"
-          
-          contain
-        />
-      </v-card>
-    </v-dialog>
   </v-container>
-</template>
 
+  <v-bottom-sheet v-model="bottomSheet">
+    <v-card>
+      <v-card-title>{{ selection }}</v-card-title>
+      <v-card-text>{{ gptResponse }}</v-card-text>
+    </v-card>
+  </v-bottom-sheet>
+</template>
 <script>
-import cardsApi from '@/api/cards.api'
+import chatGptApi from '@/api/chatgpt.api'
 export default {
   name: 'CardsMain',
   data: () => ({
-    headers: [
-      {
-        title: 'Name',
-        align: 'center',
-        sortable: false,
-        value: 'name',
-      },
-          {
-        title: 'Immage',
-        align: 'center',
-        sortable: false,
-        value: 'image',
-      },
-      {
-        title: 'Card Number',
-        align: 'center',
-        sortable: false,
-        value: 'number',
-      },
-        {
-        title: 'Rarity',
-        align: 'center',
-        sortable: false,
-        value: 'rarity',
-      },
-      {
-        title: 'Set Name',
-        align: 'center',
-        sortable: false,
-        value: 'setName',
-      },
-        {
-        title: 'Available',
-        align: 'center',
-        sortable: false,
-        value: 'quantity',
-      },
-        {
-        title: 'Add to Cart',
-        align: 'center',
-        sortable: false,
-         value: 'action',
-      }
-    ],
-    cardList: undefined,
-    search: undefined,
-    expandFilter: true,
-    dialog: false,
-    selectedCard: undefined
+    selection: undefined,
+    gptResponse: undefined,
+    bottomSheet: false
 
   }),
     created() {
@@ -235,14 +68,39 @@ export default {
   },
   methods:{
      initialize() {
-        cardsApi.fetchAll().then(response =>{
-            this.cardList = response.data
-        })
+
      },
-     openDialog(selectedCard){
-      this.selectedCard = selectedCard
-      this.dialog = true;
-     }
+
+     selectText(event) {
+    const selectedText = window.getSelection();
+    console.log(selectedText)
+    this.selection = selectedText
+    console.log(event.currentTarget.textContent)
+    chatGptApi.ask(this.selection.toString(), event.currentTarget.textContent).then(response =>{
+     
+            console.log(response)
+            this.gptResponse = response.response;
+            this.bottomSheet = true
+
+            console.log(this.gptResponse)
+
+        })
+  }
+     
   }
 }
 </script>
+
+<style scoped>
+.highlight {
+  color: blue;         /* Imposta il colore del testo a blu */
+  font-weight: bold;   /* Rende il testo leggermente più grassetto */
+  cursor: pointer;     /* Cambia il cursore in un puntatore per indicare la cliccabilità */
+}
+</style>
+
+<style>
+.span{
+  color:blue !important
+}
+</style>
