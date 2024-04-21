@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "local": "vite --mode develop-local",
+    "start": "vite --mode develop-local",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "lint": "eslint . --fix --ignore-path .gitignore"
