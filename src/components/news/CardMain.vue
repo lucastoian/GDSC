@@ -34,7 +34,6 @@
     flex-direction: column;">
 <p
                   @mouseup="selectText"
-                  @touchend="selectText"
                   v-html="card.textFormatted"
                 />
                 <v-btn style="justify-content: center;"
@@ -122,17 +121,17 @@ export default {
     const selectedText = window.getSelection();
     console.log(selectedText)
     this.selection = selectedText
-    console.log(event.currentTarget.textContent)
    
+    if(this.selection.toString().length > 0){
       chatGptApi.ask(this.selection.toString(), event.currentTarget.textContent).then(response =>{
      
-     console.log(response)
      this.gptResponse = response.response;
      this.bottomSheet = true
+    })
+    }
+   
 
-     console.log(this.gptResponse)
 
- })
     
 
   }
