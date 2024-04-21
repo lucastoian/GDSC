@@ -34,6 +34,7 @@
     flex-direction: column;">
 <p
                   @mouseup="selectText"
+                  @touchup="selectText"
                   v-html="card.textFormatted"
                 />
                 <v-btn style="justify-content: center;"
@@ -127,6 +128,7 @@ export default {
      
      this.gptResponse = response.response;
      this.bottomSheet = true
+        this.selection = undefined
     })
     }
    
