@@ -27,8 +27,11 @@ class ChatGptApi {
 
       async game(gameMode) {
         // Ensure the base URL and endpoint are correctly set up
-
-        let url = `${baseUrlApi}/game`;
+        let url
+        if(gameMode == "easy") url = `${baseUrlApi}/gameeasy`;
+        if(gameMode == "medium") url = `${baseUrlApi}/gamemedium`;
+        if(gameMode == "hard") url = `${baseUrlApi}/gamehard`;
+    
     
         // Prepare the request body and headers
         const data = {
