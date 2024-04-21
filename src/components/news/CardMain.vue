@@ -1,19 +1,49 @@
 <!-- eslint-disable vue/valid-v-slot -->
 <!-- eslint-disable vue/no-v-html -->
 <template>
-   <v-container fluid>
+  <v-container fluid>
     <v-row>
-      <v-col cols="12" md="6" v-for="card in cards" :key="card.title">
-        <v-card  :subtitle="card.subtitle" >
-          <v-img v-if="card.imageUrl" :src="card.imageUrl" class="align-end" height="400px" cover>
-            <v-card-title class="text-white" v-text="card.title"></v-card-title>
+      <v-col
+        v-for="card in cards"
+        :key="card.title"
+        cols="12"
+        md="6"
+      >
+        <v-card
+          :subtitle="card.subtitle"
+          variant="tonal"
+        >
+          <v-img
+            v-if="card.imageUrl"
+            :src="card.imageUrl"
+            class="align-end"
+            height="400px"
+            cover
+          >
+            <v-card-title
+              class="text-white"
+              v-text="card.title"
+            />
           </v-img>
           <v-expansion-panels>
             <v-expansion-panel
               title="Tap to expand"
             >
               <template #text >
-                <p @mouseup="selectText" v-html="card.textFormatted"></p>
+                <div style="    display: flex;
+    flex-direction: column;">
+<p
+                  @mouseup="selectText"
+                  v-html="card.textFormatted"
+                />
+                <v-btn style="justify-content: center;"
+                  append-icon="mdi-trending-up"
+                  variant="tonal"
+                >
+                  Try to predict
+                </v-btn>
+                </div>
+                
               </template>
             </v-expansion-panel>
           </v-expansion-panels>
@@ -43,7 +73,8 @@ export default {
     "imageUrl": "/src/assets/sole.jpeg",
     "subtitle": "Growing Investor Interest in Sustainable Investments",
     "text": "As global attention shifts towards sustainability, renewable energy stocks have seen a significant surge. Investors are increasingly drawn to companies that demonstrate strong commitments to environmental sustainability. This shift is not only driven by ethical considerations but also by the substantial growth potential these companies offer.",
-    "textFormatted": "As global attention shifts towards <span class='highlight'>sustainability</span>, renewable energy stocks have seen a significant <span class='highlight'>surge</span>. Investors are increasingly drawn to companies that demonstrate strong commitments to <span class='highlight'>environmental sustainability</span>. This shift is not only driven by <span class='highlight'>ethical considerations</span> but also by the substantial growth potential these companies offer."
+  "textFormatted": "In a landscape marked by heightened <span class='highlight'>environmental consciousness</span> and growing concerns over climate change, the renewable energy sector is experiencing a remarkable <span class='highlight'>surge</span> in investment and market value. Stocks of companies involved in renewable energy technologies such as solar, wind, hydroelectric, and geothermal power have seen unprecedented gains, reflecting the increasing demand for <span class='highlight'>sustainable energy</span> solutions. <br><br>This <span class='highlight'>surge</span> in renewable energy stocks can be attributed to several factors. Firstly, governments worldwide are implementing policies and incentives to promote the adoption of renewable energy sources and reduce carbon emissions. Subsidies, tax breaks, and renewable energy targets are driving investment in clean energy infrastructure projects and bolstering the financial prospects of renewable energy companies.<br><br>Moreover, investors are increasingly recognizing the long-term viability and growth potential of the renewable energy sector. As the global transition towards a low-carbon economy accelerates."
+
 },
   {
     "title": "Stock Market Trends Analysis",
@@ -109,16 +140,17 @@ export default {
 }
 </script>
 
-<style >
+<style>
 .highlight {
   color: blue !important;         /* Imposta il colore del testo a blu */
   font-weight: bold;   /* Rende il testo leggermente più grassetto */
   cursor: pointer;     /* Cambia il cursore in un puntatore per indicare la cliccabilità */
 }
+
+
 </style>
 
 <style>
-.span{
-  color:blue !important
-}
+
+
 </style>

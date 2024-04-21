@@ -42,7 +42,13 @@
 
 
   <v-container fluid>
-    <v-row>
+    <v-progress-circular
+    v-if="loading"
+      color="primary"
+      indeterminate
+      class="m-3"
+    ></v-progress-circular>
+    <v-row  v-if="!loading">
       <v-col
         cols="12"
         md="12"
@@ -53,14 +59,14 @@
           class="d-flex flex-row align-center rounded-lg purple-gradient"
         >
           <v-card-text>
-            <p>{{ gameData[currentAnswer].question }}</p>
+            <p style="font-weight: bold; font-size: large; text-align: center; font-style: italic;">{{ gameData[currentAnswer].question }}</p>
           </v-card-text>
         </v-card>
       </v-col>
     </v-row>
 
 
-    <v-row v-if="gameData">
+    <v-row v-if="gameData && !loading">
       <v-col
         cols="12"
         md="12"
@@ -99,6 +105,7 @@
     selectedAnswer: null,
     answerStatus: null,
     currentLevel: 0,
+    loading:true,
     win: false
  
    }),
@@ -110,8 +117,9 @@
    },
    methods:{
       initialize() {
-    
+   
         chatGptApi.game("easy").then(response =>{
+            this.loading = false;
        this.gameData = response.response.questions
         console.log(response.response)
         })
@@ -129,6 +137,12 @@
         }
         if(this.answerStatus == 'incorrect'){
             this.currentAnswer = 0
+            this.loading = true;
+            chatGptApi.game("easy").then(response =>{
+            this.loading = false;
+            this.gameData = response.response.questions
+        console.log(response.response)
+        })
         }
     
 
@@ -138,18 +152,21 @@
       }, 2000); // Reset dopo 2 secondi
       setTimeout(() => {
   if (this.currentAnswer === 4) {
+    this.loading = true;
     this.currentLevel++;
     if(this.currentLevel == 3){
         this.win = true;
     }
     if (this.currentLevel === 1) {
       chatGptApi.game("medium").then(response => {
+        this.loading = false;
         this.currentAnswer = 0;
         this.gameData = response.response.questions;
         console.log(response.response);
       });
     } else if (this.currentLevel === 2) {
       chatGptApi.game("hard").then(response => {
+        this.loading = false;
         this.currentAnswer = 0;
         this.gameData = response.response.questions;
         console.log(response.response);
@@ -173,7 +190,7 @@
  
  <style scoped>
  .purple-gradient {
-   background: linear-gradient(to right, #9C27B0, #E040FB); /* Example gradient */
+   background: linear-gradient(to right, #9C27B0, #8a00a1); /* Example gradient */
    color: white;
  }
  .green-line::before {
