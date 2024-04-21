@@ -1,4 +1,4 @@
-# EduFinance AI
+# BeUp
 
 ![EduFinance AI Logo](images/logo.png)
 
