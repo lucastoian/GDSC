@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "local": "vite --mode develop-local",
-    "start": "serve -s build",
+    "start": "vite --mode develop-local",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --fix --ignore-path .gitignore"
@@ -16,7 +16,6 @@
     "prettier": "^3.2.5",
     "prettier-eslint": "^16.3.0",
     "roboto-fontface": "*",
-    "serve": "^14.2.1",
     "vue": "^3.4.21",
     "vue-eslint-parser": "^8.3.0",
     "vuetify": "^3.5.8"
