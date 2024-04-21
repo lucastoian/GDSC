@@ -107,6 +107,7 @@ export default {
 ]
 
 
+
   }),
     created() {
 
@@ -127,15 +128,11 @@ export default {
      
      this.gptResponse = response.response;
      this.bottomSheet = true
-        this.selection = undefined
-    })
-    
-   
+  
+    })  
 
+  },
 
-    
-
-  }
      
   }
 }
