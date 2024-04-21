@@ -2,7 +2,7 @@
 
 
 ## Introduction
-BeUp is an innovative application designed to revolutionize financial education through the power of Artificial Intelligence (AI). This platform harnesses advanced AI algorithms to deliver personalized and interactive learning experiences, empowering users to enhance their financial literacy and make informed decisions about their finances.
+BeUp represents a paradigm shift in financial education, harnessing the power of Artificial Intelligence to deliver personalized and interactive learning experiences. With a focus on responsible education, it empowers users to analyze global news and understand its financial impact. Through dynamic content and real-world examples, BeUp cultivates financial literacy and equips users with the knowledge to make informed decisions about their finances, promoting long-term financial well-being.
 
 ## Key Features
 1. **Personalized Learning:** BeUp leverages AI technology to tailor learning experiences to each user's individual needs and preferences. Through adaptive learning algorithms, the platform identifies areas for improvement and delivers customized content to help users strengthen their financial knowledge.
