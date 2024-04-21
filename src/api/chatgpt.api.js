@@ -25,6 +25,7 @@ class ChatGptApi {
         }
       }
 
+      
       async game(gameMode) {
         // Ensure the base URL and endpoint are correctly set up
         let url
