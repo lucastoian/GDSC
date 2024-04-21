@@ -2,10 +2,10 @@
 
 
 ## Introduction
-EduFinance AI is an innovative application designed to revolutionize financial education through the power of Artificial Intelligence (AI). This platform harnesses advanced AI algorithms to deliver personalized and interactive learning experiences, empowering users to enhance their financial literacy and make informed decisions about their finances.
+BeUp is an innovative application designed to revolutionize financial education through the power of Artificial Intelligence (AI). This platform harnesses advanced AI algorithms to deliver personalized and interactive learning experiences, empowering users to enhance their financial literacy and make informed decisions about their finances.
 
 ## Key Features
-1. **Personalized Learning:** EduFinance AI leverages AI technology to tailor learning experiences to each user's individual needs and preferences. Through adaptive learning algorithms, the platform identifies areas for improvement and delivers customized content to help users strengthen their financial knowledge.
+1. **Personalized Learning:** BeUp leverages AI technology to tailor learning experiences to each user's individual needs and preferences. Through adaptive learning algorithms, the platform identifies areas for improvement and delivers customized content to help users strengthen their financial knowledge.
 
 2. **Real-Time News Learning:** Stay updated with real-time financial news tailored to your level of understanding, curated by AI. Learn from current events and trends, with quizzes to reinforce your knowledge.
 
@@ -22,4 +22,4 @@ EduFinance AI is an innovative application designed to revolutionize financial e
 
 
 ## Getting Started
-To get started with EduFinance AI, simply sign up for an account on our website or download the mobile app from the App Store or Google Play Store. Once registered, you can personalize your learning experience, explore interactive simulations, and access a wealth of educational resources to enhance your financial knowledge.
+To get started with BeUp, simply sign up for an account on our website or download the mobile app from the App Store or Google Play Store. Once registered, you can personalize your learning experience, explore interactive simulations, and access a wealth of educational resources to enhance your financial knowledge.
