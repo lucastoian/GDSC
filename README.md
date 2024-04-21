@@ -16,8 +16,8 @@ EduFinance AI is an innovative application designed to revolutionize financial e
 5. **Profile and Progress Tracking:** Keep track of your learning journey with a personalized profile. Monitor your progress, achievements, and areas for improvement as you advance through the course material.
 
 <p align="center">
-  <img src="images/news.png" width="400" /> 
-  <img src="images/profile.png" width="400" /> 
+  <img src="images/news.png" width="200" style="margin-right: 100px; /> 
+  <img src="images/profile.png" width="200" /> 
 </p>
 
 
