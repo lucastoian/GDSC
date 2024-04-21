@@ -120,7 +120,7 @@ export default {
   watch:{
     selection(text){
       this.selectedWords = window.getSelection();
-      chatGptApi.ask(this.selectedWords, this.tevent).then(response =>{
+      chatGptApi.ask(this.selectedWords.toString(), this.tevent).then(response =>{
      
      this.gptResponse = response.response;
      this.bottomSheet = true
