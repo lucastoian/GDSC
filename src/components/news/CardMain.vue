@@ -34,6 +34,7 @@
     flex-direction: column;">
 <p
                   @mouseup="selectText"
+                  @touchend="selectText"
                   v-html="card.textFormatted"
                 />
                 <v-btn style="justify-content: center;"
