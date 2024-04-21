@@ -22,18 +22,18 @@
     items: [
         {
           title: 'Fundamentals',
-          icon: '/src/assets/school.png',
+          icon: 'https://tcgmarket.s3.eu-west-3.amazonaws.com/beapp/assets/school.png',
           color: 'purple-gradient'
         },
         {
           title: 'Crypto market',
-          icon: '/src/assets/bitco.png',
+          icon: 'https://tcgmarket.s3.eu-west-3.amazonaws.com/beapp/assets/bitco.png',
           color: 'purple-gradient',
           to: '/cryptogame'
         },
         {
           title: 'Financial market',
-          icon: '/src/assets/graf.png',
+          icon: 'https://tcgmarket.s3.eu-west-3.amazonaws.com/beapp/assets/graf.png',
           color: 'purple-gradient'
         }
       ]
