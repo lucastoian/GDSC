@@ -34,8 +34,10 @@
     flex-direction: column;">
 <p
                   @mouseup="selectText"
+            
                   v-html="card.textFormatted"
                 />
+        
                 <v-btn style="justify-content: center;"
                   append-icon="mdi-trending-up"
                   variant="tonal"
@@ -43,7 +45,7 @@
                   Try to predict
                 </v-btn>
                 </div>
-                
+       
               </template>
             </v-expansion-panel>
           </v-expansion-panels>
@@ -61,12 +63,18 @@
 </template>
 <script>
 import chatGptApi from '@/api/chatgpt.api'
+import Highlighter from 'vue-highlight-words'
 export default {
   name: 'CardsMain',
+  components: {
+    Highlighter
+  },
   data: () => ({
     selection: undefined,
+    selectedWords: [],
     gptResponse: undefined,
     bottomSheet: false,
+    tevent:undefined,
     cards:[
     {
     "title": "Renewable Energy Stocks Surge",
@@ -109,6 +117,18 @@ export default {
 
 
   }),
+  watch:{
+    selection(text){
+      this.selectedWords = window.getSelection();
+      chatGptApi.ask(this.selectedWords, this.tevent).then(response =>{
+     
+     this.gptResponse = response.response;
+     this.bottomSheet = true
+  
+    })  
+      console.log(this.selectedWords + "  " + text)
+    }
+  },
     created() {
 
     this.initialize()
@@ -117,19 +137,19 @@ export default {
      initialize() {
 
      },
+     getSearchWords() {
+      const selection = window.getSelection();
+      return selection && selection.toString().length > 0 ? selection.toString().split() : [];
+    },
 
      selectText(event) {
-    const selectedText = window.getSelection();
+    const selectedText = window.getSelection().toString();
+    this.tevent = event
     console.log(selectedText)
     this.selection = selectedText
    
   
-      chatGptApi.ask(this.selection.toString(), event.currentTarget.textContent).then(response =>{
-     
-     this.gptResponse = response.response;
-     this.bottomSheet = true
-  
-    })  
+
 
   },
 
