@@ -1,6 +1,5 @@
 # BeUp
 
-![EduFinance AI Logo](images/logo.png)
 
 ## Introduction
 EduFinance AI is an innovative application designed to revolutionize financial education through the power of Artificial Intelligence (AI). This platform harnesses advanced AI algorithms to deliver personalized and interactive learning experiences, empowering users to enhance their financial literacy and make informed decisions about their finances.
@@ -15,6 +14,12 @@ EduFinance AI is an innovative application designed to revolutionize financial e
 4. **Data-Driven Insights:** With AI-driven analytics, EduFinance AI provides users with valuable insights into their financial habits and trends. Users can track their spending patterns, identify areas for saving, and receive personalized recommendations for optimizing their financial health.
 
 5. **Profile and Progress Tracking:** Keep track of your learning journey with a personalized profile. Monitor your progress, achievements, and areas for improvement as you advance through the course material.
+
+<p align="center">
+  <img src="images/news.png" width="400" /> 
+  <img src="images/profile.png" width="400" /> 
+</p>
+
 
 ## Getting Started
 To get started with EduFinance AI, simply sign up for an account on our website or download the mobile app from the App Store or Google Play Store. Once registered, you can personalize your learning experience, explore interactive simulations, and access a wealth of educational resources to enhance your financial knowledge.
